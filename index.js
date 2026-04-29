@@ -8,7 +8,7 @@
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 */
 
-import chalk from "chalk";
+//import chalk from "chalk";
 import fs from "fs";
 import path from "path";
 
@@ -62,7 +62,8 @@ await createFile();
 if (method === "GET" && resource === "products") {
   const data = readProducts();
   if (!data) {
-    console.log(chalk.red("¡Productos no encontrados!"));
+    //console.log(chalk.red("¡Productos no encontrados!"));
+    console.log("¡Productos no encontrados!");
   } else {
     console.log(data);
   }
@@ -78,7 +79,8 @@ if (
   const data = readProducts();
   const product = data.find((p) => p.id == id);
   if (!product) {
-    console.log(chalk.red("¡Producto no encontrado!"));
+    //console.log(chalk.red("¡Productos no encontrados!"));
+    console.log("¡Producto no encontrado!");
   } else {
     console.log(product);
   }
@@ -109,7 +111,8 @@ if (method === "GET" && resource.startsWith("products/?title=")) {
     (p) => p.title.toLowerCase().trim() === title.toLowerCase().trim(),
   );
   if (!product) {
-    console.log(chalk.red("¡Producto no encontrado!"));
+    //console.log(chalk.red("¡Productos no encontrados!"));
+    console.log("¡Producto no encontrado!");
   } else {
     console.log(product);
   }
@@ -140,7 +143,8 @@ if (method === "DELETE" && resource.startsWith("products/")) {
   data = data.filter((p) => p.id != id);
   writeProducts(data);
   if (!product) {
-    console.log(chalk.red("¡Producto no encontrado!"));
+    //console.log(chalk.red("¡Productos no encontrados!"));
+    console.log("¡Producto no encontrado!");
   } else {
     console.log(product);
   }
@@ -152,13 +156,15 @@ if (method === "EDIT" && resource.startsWith("products/")) {
   let data = readProducts();
   const product = data.find((p) => p.id == id);
   if (!product) {
-    console.log(chalk.red("¡Producto no encontrado!"));
+    //console.log(chalk.red("¡Productos no encontrados!"));
+    console.log("¡Producto no encontrado!");
   } else {
     console.log(product);
   }
   const index = data.findIndex((p) => p.id == id);
   if (index === -1) {
-    console.log(chalk.red("¡Producto no encontrado!"));
+    //console.log(chalk.red("¡Productos no encontrados!"));
+    console.log("¡Producto no encontrado!");
     process.exit(1);
   }
   let [title, price, category, description] = extra;

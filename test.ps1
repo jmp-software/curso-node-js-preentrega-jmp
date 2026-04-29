@@ -52,7 +52,7 @@ Write-Host ""
 
 Write-Host ""
 Write-Host ""
-Write-Host "------------- (5) TEST EDIT - CREA PRODUCTO -------------"
+Write-Host "------------- (5) TEST EDIT - EDITA PRODUCTO -------------"
 Write-Host ""
 & $nodePath index.js EDIT products/8 "Campera Adidas" "" "ropa deportiva" "Campera clásica Adidas, color negro con 3 tiras en amarillo, rojo y verde. Talle M, unisex."
 
