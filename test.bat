@@ -36,7 +36,7 @@ call npm run start POST products "Remera Chinosa Taiwanesca" 15000.35 "ropa de c
 echo.
 echo.
 echo ------------- (5) Test EDIT - Edita producto -------------
-call npm run start EDIT products/8 "Campera Adidas" "" "ropa deportiva" "Campera clásica Adidas, color negro con 3 tiras en amarillo, rojo y verde. Talle M, unisex."
+call npm run start EDIT products/8 "Campera Adidas" "" "Campera clásica Adidas, color negro con 3 tiras en amarillo, rojo y verde. Talle M, unisex." "ropa deportiva"
 
 echo.
 echo.
