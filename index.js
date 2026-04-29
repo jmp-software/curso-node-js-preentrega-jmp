@@ -4,7 +4,7 @@
     para que funcionara bien con tu script para testearlo. Además, tiene toda la lógica y es lo que se pide retornar el JSON "tal cual" digamos.
     También se puede probar "descomentando" el "if" de "createFile()" que tuve que comentar porque si no el script para testear me tiraba error en la segunda ejecución,
     dado que yo simulo una base de datos local con el "products.json" y por ende los cambios se hacían permanentes (eliminar el producto, por ejemlo) hasta que
-    recarcagara nuevamente todos los datos desde Fake Store API al archivo JSON local 
+    recargara nuevamente todos los datos desde Fake Store API al archivo JSON local 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 */
 
