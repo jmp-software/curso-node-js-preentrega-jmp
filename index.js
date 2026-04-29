@@ -168,7 +168,9 @@ if (method === "EDIT" && resource.startsWith("products/")) {
     console.log("¡Producto no encontrado!");
     process.exit(1);
   }
-  let [title, price, description, category] = extra;
+  let [title, price, description, category, image, { rate, count }] = extra;
+  
+  
   if (title === "" || title === undefined) {
     title = data[index].title;
   }
@@ -187,7 +189,8 @@ if (method === "EDIT" && resource.startsWith("products/")) {
     price,
     description,
     category,
-    rating: { rate: 0, count: 0 },
+    image,
+    rating: { rate, count },
   };
   data[index] = updatedProduct;
   writeProducts(data);
