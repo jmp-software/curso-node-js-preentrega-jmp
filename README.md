@@ -97,18 +97,18 @@ npm start GET "products?title=producto ejemplo"
 ### 4. Crear un nuevo producto
 
 ```bash
-npm start POST products "Nombre del producto" 19.99 "categoría del producto" "Descripción del producto"
+npm start POST products "Nombre del producto" 19.99 "Descripción del producto" "categoría del producto"
 ```
 > Los argumentos deben ir en este orden: título, precio, categoría, descripción.
 
 ### 5. Editar un producto por ID
 
 ```bash
-npm start EDIT products/3 "Nuevo nombre del producto" 29.99 "nueva categoría del producto" "Nueva descripción del producto"
+npm start EDIT products/3 "Nuevo nombre del producto" 29.99 "nueva descripción del producto" "Nueva categoría del producto"
 ```
 > Los argumentos que desean mantenerse igual, pueden omitirse escribiendo dos comillas contiguas vacías (**""** o **''**).
 
-> Sintaxis: **_npm run start EDIT products/1 "\<NOMBRE NUEVO DEL PRODUCTO\>"  "" "" "\<DESCRIPCIÓN NUEVA DEL PRODUCTO\>"_**
+> Sintaxis: **_npm run start EDIT products/1 "\<NOMBRE NUEVO DEL PRODUCTO\>"  "" "" "\<CATEGORÍA NUEVA DEL PRODUCTO\>"_**
 
 ### 6. Eliminar un producto por ID
 
@@ -141,7 +141,7 @@ npm start LOAD products
 
 2. Los comandos se interpretan desde los argumentos de la terminal (`process.argv`).
 
-3. El archivo JSON actúa como una **"base de datos" local** (CRUD completo).
+3. El archivo JSON actúa como una "**base de datos**" local para realizar el CRUD.
 
 4. Los nuevos productos creados con `POST` se guardan en el JSON con un `id` que se adjudica incrementándose automáticamente.
 
