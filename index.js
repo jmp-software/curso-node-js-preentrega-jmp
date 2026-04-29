@@ -120,14 +120,14 @@ if (method === "GET" && resource.startsWith("products/?title=")) {
 
 /*** CREA PRODUCTO NUEVO ***/
 if (method === "POST" && resource === "products") {
-  const [title, price, category, description] = extra;
+  const [title, price, description, category] = extra;
   const data = readProducts();
   const newProduct = {
     id: data.length ? Math.max(...data.map((p) => p.id)) + 1 : 1,
     title,
     price,
-    category,
     description,
+    category,
     rating: { rate: 0, count: 0 },
   };
   data.push(newProduct);
@@ -167,25 +167,26 @@ if (method === "EDIT" && resource.startsWith("products/")) {
     console.log("¡Producto no encontrado!");
     process.exit(1);
   }
-  let [title, price, category, description] = extra;
+  let [title, price, description, category] = extra;
   if (title === "" || title === undefined) {
     title = data[index].title;
   }
   if (price === "" || price === undefined) {
     price = data[index].price;
   }
-  if (category === "" || category === undefined) {
-    category = data[index].category;
-  }
   if (description === "" || description === undefined) {
     description = data[index].description;
   }
+  if (category === "" || category === undefined) {
+    category = data[index].category;
+  }
+
   const updatedProduct = {
     id: Number(id),
     title,
     price,
-    category,
     description,
+    category,
     rating: { rate: 0, count: 0 },
   };
   data[index] = updatedProduct;
