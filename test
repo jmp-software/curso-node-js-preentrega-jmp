@@ -1,0 +1,50 @@
+# Script de BASH para sistemas derivados de Unix (Linux, Mac, etc.)
+
+#!/bin/bash
+
+clear
+
+echo ""
+echo ""
+echo "------------- LOAD - OPCIÓN PARA CARGAR DATOS DESDE LA API -------------"
+echo ""
+read -p "¿Querés cargar datos desde la API? (\"S\" o \"N\") " opcion
+opcion=$(echo "$opcion" | tr '[:upper:]' '[:lower:]')
+if [[ "$opcion" == "s" ]]; then
+  npm start LOAD products
+fi
+
+echo ""
+echo ""
+echo "------------- (1) TEST GET - OBTIENE TODOS LOS PRODUCTOS -------------"
+npm run start GET products
+
+echo ""
+echo ""
+echo "------------- (2) TEST GET - OBTIENE PRODUCTO POR ID -------------"
+npm run start GET products/1
+
+echo ""
+echo ""
+echo "------------- (3) TEST GET - OBTIENE PRODUCTO POR TÍTULO -------------"
+npm run start GET "products/?title=MBJ Women's Solid Short Sleeve Boat Neck V"
+
+echo ""
+echo ""
+echo "------------- (4) TEST POST - CREA PRODUCTO -------------"
+npm run start POST products "Remera Chinosa Taiwanesca" 15000.35 "ropa de calidad discreta" "Remeras de calidad muy dudosa importadas de China XXL"
+
+echo ""
+echo ""
+echo "------------- (5) TEST EDIT - CREA PRODUCTO -------------"
+npm run start EDIT products/8 "Campera Adidas" "" "ropa deportiva" "Campera clásica Adidas, color negro con 3 tiras en amarillo, rojo y verde. Talle M, unisex."
+
+echo ""
+echo ""
+echo "------------- (6) TEST DELETE - BORRA PRODUCTO -------------"
+npm run start DELETE products/1 
+
+echo ""
+echo ""
+echo "¡PRUEBA TERMINADA! 👍"
+echo ""

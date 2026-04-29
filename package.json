@@ -1,0 +1,28 @@
+{
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "chalk": "^5.6.2"
+  },
+  "name": "sitio",
+  "version": "1.0.0",
+  "description": "<span style=\"font-size: 1.5rem;\">🚧 **PREENTREGA** 🚧</span>",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmp-software/curso-node-js-preentrega-jmp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jmp-software/curso-node-js-preentrega-jmp/issues"
+  },
+  "homepage": "https://github.com/jmp-software/curso-node-js-preentrega-jmp#readme"
+}
