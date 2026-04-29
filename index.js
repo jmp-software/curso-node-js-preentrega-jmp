@@ -8,7 +8,7 @@
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 */
 
-//import chalk from "chalk"; 
+//import chalk from "chalk";
 import fs from "fs";
 import path from "path";
 
@@ -169,8 +169,7 @@ if (method === "EDIT" && resource.startsWith("products/")) {
     process.exit(1);
   }
   let [title, price, description, category, image, { rate, count }] = extra;
-  
-  
+
   if (title === "" || title === undefined) {
     title = data[index].title;
   }
@@ -183,6 +182,15 @@ if (method === "EDIT" && resource.startsWith("products/")) {
   if (category === "" || category === undefined) {
     category = data[index].category;
   }
+  if (image === "" || image === undefined) {
+    image = data[index].image;
+  }
+  if (rate === "" || rate === undefined) {
+    rate = data[index].rate;
+  }
+    if (count === "" || count === undefined) {
+      count = data[index].count;
+    }
   const updatedProduct = {
     id: Number(id),
     title,
