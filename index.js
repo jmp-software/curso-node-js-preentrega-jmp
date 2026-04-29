@@ -36,7 +36,7 @@ async function createFile(force) {
   }
 }
 
-/** Lee los producos desde el archivo y los retorna **/
+/** Lee los productos desde el archivo y los retorna **/
 function readProducts() {
   const data = fs.readFileSync(FILE_PATH, "utf-8");
   return JSON.parse(data);
@@ -54,7 +54,7 @@ if (method === "LOAD" && resource === "products") {
   createFile(true);
 }
 
-// Siempre renueva el archivo debido a que la condición para verificar su existencia stá comentada.
+// Siempre renueva el archivo debido a que la condición para verificar su existencia está comentada.
 /***  CREA ARCHIVO JSON ***/
 await createFile();
 
@@ -87,7 +87,6 @@ if (
 }
 
 // Acá me puse a experimentar un toque como para agregar algo más
-// También se podrían editar o crear productos con este formato
 /*** OBTIENE PRODUCTO POR TÍTULO/NOMBRE ***/
 if (method === "GET" && resource.startsWith("products/?title=")) {
   const [, queryString] = resource.split("?");
