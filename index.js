@@ -129,6 +129,7 @@ if (method === "POST" && resource === "products") {
     price,
     description,
     category,
+    image: "https://placehold.co/800x800",
     rating: { rate: 0, count: 0 },
   };
   data.push(newProduct);
@@ -168,7 +169,7 @@ if (method === "EDIT" && resource.startsWith("products/")) {
     console.log("¡Producto no encontrado!");
     process.exit(1);
   }
-  let [title, price, description, category, image, { rate, count }] = extra;
+  let [title, price, description, category, image,  rate, count] = extra;
 
   if (title === "" || title === undefined) {
     title = data[index].title;
@@ -186,10 +187,10 @@ if (method === "EDIT" && resource.startsWith("products/")) {
     image = data[index].image;
   }
   if (rate === "" || rate === undefined) {
-    rate = data[index].rate;
+    rate = data[index].rating.rate;
   }
     if (count === "" || count === undefined) {
-      count = data[index].count;
+      count = data[index].rating.count;
     }
   const updatedProduct = {
     id: Number(id),
