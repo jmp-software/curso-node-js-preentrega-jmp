@@ -104,7 +104,7 @@ npm start POST products "Nombre del producto" 19.99 "Descripción del producto" 
 ### 5. Editar un producto por ID
 
 ```bash
-npm start EDIT products/3 "Nuevo nombre del producto" 29.99 "nueva descripción del producto" "Nueva categoría del producto"
+npm start EDIT products/3 "Nuevo nombre del producto" 29.99 "Nueva descripción del producto" "nueva categoría del producto"
 ```
 > Los argumentos que desean mantenerse igual, pueden omitirse escribiendo dos comillas contiguas vacías (**""** o **''**).
 
