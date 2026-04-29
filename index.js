@@ -120,7 +120,7 @@ if (method === "GET" && resource.startsWith("products/?title=")) {
 
 /*** CREA PRODUCTO NUEVO ***/
 if (method === "POST" && resource === "products") {
-  const [title, price, description, category] = extra;
+  const [title, price, category, description] = extra;
   const data = readProducts();
   const newProduct = {
     id: data.length ? Math.max(...data.map((p) => p.id)) + 1 : 1,
