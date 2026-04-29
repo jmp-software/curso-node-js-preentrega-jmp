@@ -48,7 +48,7 @@ Write-Host ""
 Write-Host ""
 Write-Host "------------- (4) TEST POST - CREA PRODUCTO -------------"
 Write-Host ""
-& $nodePath index.js POST products "Remera Chinosa Taiwanesca" 15000.35 "ropa de calidad discreta" "Remeras de calidad muy dudosa importadas de China XXL"
+& $nodePath index.js POST products "Remera Chinosa Taiwanesca" 15000.35 "Remeras de calidad muy dudosa importadas de China XXL" "ropa de calidad discreta" 
 
 Write-Host ""
 Write-Host ""

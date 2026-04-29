@@ -31,7 +31,7 @@ call npm run start GET "products/?title=MBJ Women's Solid Short Sleeve Boat Neck
 echo.
 echo.
 echo ------------- (4) Test POST - Crea producto -------------
-call npm run start POST products "Remera Chinosa Taiwanesca" 15000.35 "ropa de calidad discreta" "Remeras de calidad muy dudosa importadas de China XXL"
+call npm run start POST products "Remera Chinosa Taiwanesca" 15000.35 "Remeras de calidad muy dudosa importadas de China XXL" "ropa de calidad discreta" 
 
 echo.
 echo.
