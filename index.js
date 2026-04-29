@@ -2,13 +2,13 @@
  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
     Había hecho una versión un poquito más "compleja" que incluía "gráficos" ASCII rudimentarios (detalles de vieja escuela jaja) pero corregí el código original
     para que funcionara bien con tu script para testearlo. Además, tiene toda la lógica y es lo que se pide retornar el JSON "tal cual" digamos.
-    También se puede probar "descomentando" el if de "createFile()"" que tuve que comentar porque si no el script para testear me tiraba error en la segunda ejecución,
-    dado que yo simulo una base de datos local con el "products.json" y por ende los cambios  se hacían permanentes (eliminar el producto, por ejemlo) hasta que
-    recarcagara nuevamente todos los datos desde Fake Srote API al archivo JSON local
+    También se puede probar "descomentando" el "if" de "createFile()" que tuve que comentar porque si no el script para testear me tiraba error en la segunda ejecución,
+    dado que yo simulo una base de datos local con el "products.json" y por ende los cambios se hacían permanentes (eliminar el producto, por ejemlo) hasta que
+    recarcagara nuevamente todos los datos desde Fake Store API al archivo JSON local 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 */
 
-//import chalk from "chalk";
+//import chalk from "chalk"; 
 import fs from "fs";
 import path from "path";
 
@@ -48,13 +48,13 @@ function writeProducts(data) {
 }
 
 // Tenía sentido cuando en "createFile()" solo cargaba desde la API si el archivo no existía
-// Lo dejo igual aunque ahora carga siempre desde la API cuando inicia si no "descomentás" el if en crateFile()
+// Lo dejo igual aunque ahora carga siempre desde la API cuando inicia si no "descomentás" el "if" en "createFile()"
 /***  RECARGA LOS PRODUCTOS ***/
 if (method === "LOAD" && resource === "products") {
   createFile(true);
 }
 
-// Siempre renueva el archivo debido a que la condición para verificar la existencia del JS está comentada.
+// Siempre renueva el archivo debido a que la condición para verificar su existencia stá comentada.
 /***  CREA ARCHIVO JSON ***/
 await createFile();
 
@@ -87,6 +87,7 @@ if (
 }
 
 // Acá me puse a experimentar un toque como para agregar algo más
+// También se podrían editar o crear productos con este formato
 /*** OBTIENE PRODUCTO POR TÍTULO/NOMBRE ***/
 if (method === "GET" && resource.startsWith("products/?title=")) {
   const [, queryString] = resource.split("?");
@@ -180,7 +181,6 @@ if (method === "EDIT" && resource.startsWith("products/")) {
   if (category === "" || category === undefined) {
     category = data[index].category;
   }
-
   const updatedProduct = {
     id: Number(id),
     title,
