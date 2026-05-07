@@ -36,8 +36,8 @@ npm run start POST products "Remera Chinosa Taiwanesca" 15000.35 "Remeras de cal
 
 echo ""
 echo ""
-echo "------------- (5) TEST EDIT - EDITA PRODUCTO -------------"
-npm run start EDIT products/8 "Campera Adidas" "" "Campera clásica Adidas, color negro con 3 tiras en amarillo, rojo y verde. Talle M, unisex." "ropa deportiva" 
+echo "------------- (5) TEST PATCH - EDITA PRODUCTO -------------"
+npm run start PATCH products/8 "Campera Adidas" "" "Campera clásica Adidas, color negro con 3 tiras en amarillo, rojo y verde. Talle M, unisex." "ropa deportiva" 
 
 echo ""
 echo ""

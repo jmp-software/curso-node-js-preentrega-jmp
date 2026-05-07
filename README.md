@@ -104,11 +104,11 @@ npm start POST products "Nombre del producto" 19.99 "Descripción del producto" 
 ### 5. Editar un producto por ID
 
 ```bash
-npm start EDIT products/3 "Nuevo nombre del producto" 29.99 "Nueva descripción del producto" "nueva categoría del producto"
+npm start PATCH products/3 "Nuevo nombre del producto" 29.99 "Nueva descripción del producto" "nueva categoría del producto"
 ```
 > Los argumentos que desean mantenerse igual, pueden omitirse escribiendo dos comillas contiguas vacías (**""** o **''**).
 
-> Sintaxis: **_npm run start EDIT products/1 "\<NOMBRE NUEVO DEL PRODUCTO\>"  "" "" "\<CATEGORÍA NUEVA DEL PRODUCTO\>"_**
+> Sintaxis: **_npm run start PATCH products/1 "\<NOMBRE NUEVO DEL PRODUCTO\>"  "" "" "\<CATEGORÍA NUEVA DEL PRODUCTO\>"_**
 
 ### 6. Eliminar un producto por ID
 
@@ -171,7 +171,7 @@ El proyecto incluye tres scripts que ejecutan **comandos automáticamente** para
 3. Ejecuta `GET products/1` → muestra el producto con ID 1
 4. Ejecuta `GET "products?title=Nombre de producto"` → busca un producto por título/nombre 
 5. Ejecuta `POST products` → crea un producto 
-6. Ejecuta `EDIT products/1` → edita los datos de un producto ya existente, en este caso el de ID 1
+6. Ejecuta `PATCH products/1` → edita los datos de un producto ya existente, en este caso el de ID 1
 7. Ejecuta `DELETE products/1` → elimina el producto con ID 1
 
 ---

@@ -3,7 +3,7 @@
     Había hecho una versión un poquito más "compleja" que incluía "gráficos" ASCII rudimentarios (detalles de vieja escuela jaja) pero corregí el código original
     para que funcionara bien con tu script para testearlo. Además, tiene toda la lógica y es lo que se pide retornar el JSON "tal cual" digamos.
     También se puede probar "descomentando" el "if" de "createFile()" que tuve que comentar porque si no el script para testear me tiraba error en la segunda ejecución,
-    dado que yo simulo una base de datos local con el "products.json" y por ende los cambios se hacían permanentes (eliminar el producto, por ejemlo) hasta que
+    dado que yo simulo una base de datos local con el "products.json" y por ende los cambios se hacían permanentes (eliminar el producto, por ejemplo) hasta que
     recargara nuevamente todos los datos desde Fake Store API al archivo JSON local 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 */
@@ -54,7 +54,7 @@ if (method === "LOAD" && resource === "products") {
   createFile(true);
 }
 
-// Siempre renueva el archivo debido a que la condición para verificar su existencia está comentada.
+// Siempre renueva el archivo debido a que la condición para verificar su existencia está comentada
 /***  CREA ARCHIVO JSON ***/
 await createFile();
 
@@ -118,12 +118,14 @@ if (method === "GET" && resource.startsWith("products/?title=")) {
   }
 }
 
+// Para que pasara el test del script, tuve que invertir el orden de la constante, cambiando de lugares "category" y "description"
 /*** CREA PRODUCTO NUEVO ***/
 if (method === "POST" && resource === "products") {
   const [title, price, category, description] = extra;
   const data = readProducts();
+  const newId = data.length ? Math.max(...data.map((p) => p.id)) + 1 : 1;
   const newProduct = {
-    id: data.length ? Math.max(...data.map((p) => p.id)) + 1 : 1,
+    id: newId,
     title,
     price,
     description,
@@ -152,7 +154,7 @@ if (method === "DELETE" && resource.startsWith("products/")) {
 }
 
 /*** EDITA PRODUCTO POR ID ***/
-if (method === "EDIT" && resource.startsWith("products/")) {
+if (method === "PATCH" && resource.startsWith("products/")) {
   const [, id] = resource.split("/");
   let data = readProducts();
   const product = data.find((p) => p.id == id);
@@ -168,7 +170,7 @@ if (method === "EDIT" && resource.startsWith("products/")) {
     console.log("¡Producto no encontrado!");
     process.exit(1);
   }
-  let [title, price, description, category, image,  rate, count] = extra;
+  let [title, price, description, category, image, rate, count] = extra;
 
   if (title === "" || title === undefined) {
     title = data[index].title;
@@ -188,9 +190,9 @@ if (method === "EDIT" && resource.startsWith("products/")) {
   if (rate === "" || rate === undefined) {
     rate = data[index].rating.rate;
   }
-    if (count === "" || count === undefined) {
-      count = data[index].rating.count;
-    }
+  if (count === "" || count === undefined) {
+    count = data[index].rating.count;
+  }
   const updatedProduct = {
     id: Number(id),
     title,

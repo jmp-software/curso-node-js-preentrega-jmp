@@ -52,9 +52,9 @@ Write-Host ""
 
 Write-Host ""
 Write-Host ""
-Write-Host "------------- (5) TEST EDIT - EDITA PRODUCTO -------------"
+Write-Host "------------- (5) TEST PATCH - EDITA PRODUCTO -------------"
 Write-Host ""
-& $nodePath index.js EDIT products/8 "Campera Adidas" "" "Campera clásica Adidas, color negro con 3 tiras en amarillo, rojo y verde. Talle M, unisex." "ropa deportiva"
+& $nodePath index.js PATCH products/8 "Campera Adidas" "" "Campera clásica Adidas, color negro con 3 tiras en amarillo, rojo y verde. Talle M, unisex." "ropa deportiva"
 
 Write-Host ""
 Write-Host ""
