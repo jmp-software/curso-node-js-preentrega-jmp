@@ -205,4 +205,5 @@ if (method === "PATCH" && resource.startsWith("products/")) {
   data[index] = updatedProduct;
   writeProducts(data);
   console.log(updatedProduct);
+  
 }
